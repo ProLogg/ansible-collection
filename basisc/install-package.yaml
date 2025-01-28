@@ -1,0 +1,8 @@
+---
+- name: task install package
+  hosts: all
+  tasks:
+  - name: install netstat
+    package:
+      name: net-tools
+      state: latest

@@ -1,0 +1,8 @@
+---
+- name: task delete package
+  hosts: all
+  tasks:
+  - name: delete package
+    package:
+      name: nginx
+      state: absent

@@ -1,0 +1,13 @@
+[OSC]
+centos
+
+[OSUK]
+srv51
+ubuntu24
+kali
+
+[nodes:children]
+#lamp
+#file
+
+

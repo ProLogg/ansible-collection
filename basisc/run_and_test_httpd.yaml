@@ -1,0 +1,25 @@
+---
+- name: install start and enable apache2
+  gather_facts: false
+  hosts: OSUK
+  tasks:
+  - name: install package
+    package:
+      name: apache2
+      state: latest
+  - name: start and enable service
+    service:
+      name: apache2
+      state: started
+      enabled: yes
+
+- name: http check
+  become: true
+  hosts: localhost
+  tasks:
+  - name: test srv51 access
+    uri:
+      url: http://srv51
+  - name: test kali access
+    uri:
+      url: http://kali
